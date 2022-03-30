@@ -1,7 +1,7 @@
 # DialogOnTopKeyboard
 Simple Component Dialog
 
-<img src="https://i.ibb.co/z7fjT8h/ezgif-com-gif-maker.gif" alt="drawing" width="500"/>
+<img src="https://i.ibb.co/f8Nqm0B/ezgif-com-gif-maker-1.gif" alt="drawing" width="400"/>
 
 ### Step 1. Add the repository & dependency
 Add it in your root build.gradle at the end of repositories:
