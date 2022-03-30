@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="exxx">#BAA640</color>
+    <color name="background_btn_dialog">#E4E4E4</color>
+    <color name="edit_dialog">#F6F6F6</color>
+
+    <color name="active">#4A4A4A</color>
+    <color name="disabled">#CCCCCC</color>
+</resources>

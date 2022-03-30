@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <padding
+        android:right="@dimen/inner_edit_text"
+        android:top="@dimen/inner_edit_text"
+        android:left="@dimen/inner_edit_text"
+        android:bottom="@dimen/inner_edit_text"/>
+
+    <solid
+        android:color="@color/edit_dialog"/>
+
+
+</shape>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="out_root">30dp</dimen>
+    <dimen name="inner_root">14dp</dimen>
+    <dimen name="inner_edit_text_tb">15dp</dimen>
+    <dimen name="inner_edit_text">5dp</dimen>
+</resources>
