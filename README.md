@@ -1,6 +1,8 @@
 # DialogOnTopKeyboard
 Simple Component Dialog
 
+<img src="https://i.ibb.co/z7fjT8h/ezgif-com-gif-maker.gif" alt="drawing" width="500"/>
+
 ### Step 1. Add the repository & dependency
 Add it in your root build.gradle at the end of repositories:
 ```java
@@ -43,3 +45,4 @@ dialogKeyboards.onBtnSendClicked(new DialogKeyboards.BtnSendClick() {
     }
 });
 ```
+
