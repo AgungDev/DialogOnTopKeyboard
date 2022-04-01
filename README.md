@@ -6,12 +6,19 @@ Simple Component Dialog
 ### Step 1. Add the repository & dependency
 Add it in your root build.gradle at the end of repositories:
 ```java
-  allprojects {
+pluginManagement {
     repositories {
-      
-      maven { url 'https://jitpack.io' }
+    ...
+        maven { url 'https://jitpack.io' }
     }
-  }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+    ...
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 
 and dapedency
