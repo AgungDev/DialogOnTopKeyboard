@@ -28,7 +28,7 @@ and dapedency
   }
 ```
 
-### Step 1. Add MainActivity
+### Step 2. Add MainActivity
 
 ```java
 //setup
