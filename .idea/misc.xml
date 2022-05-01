@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../../../layout/custom_preview.xml" value="0.25" />
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.33" />
+        <entry key="DialogOnTopKeyboard/src/main/res/drawable/background_dua.xml" value="0.1385" />
         <entry key="DialogOnTopKeyboard/src/main/res/drawable/background_root.xml" value="0.1455" />
         <entry key="DialogOnTopKeyboard/src/main/res/drawable/backround_edit_text.xml" value="0.1455" />
+        <entry key="DialogOnTopKeyboard/src/main/res/drawable/backround_edit_text_dua.xml" value="0.1385" />
         <entry key="DialogOnTopKeyboard/src/main/res/drawable/ic_notifications.xml" value="0.1455" />
         <entry key="DialogOnTopKeyboard/src/main/res/drawable/ic_time.xml" value="0.1455" />
         <entry key="app/src/main/res/drawable/bg_edittext.xml" value="0.1455" />

@@ -6,12 +6,14 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.text.InputFilter;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +25,8 @@ public class DialogKeyboards extends Dialog {
     //interface
     public interface BtnSendClick{
         void onSendBtn(String clock, boolean notification, String mText);
+        void onSendBtn2(String mText);
+        void onMenu();
         void onClockClick(TextView tv);
     }
 
@@ -38,6 +42,12 @@ public class DialogKeyboards extends Dialog {
         interfaceDialogSample.onSendBtn(clock, notif, mText);
     }
 
+    //btn send
+    private void onSendBtn(String mText){
+        interfaceDialogSample.onSendBtn2(mText);
+    }
+
+
     //btn clock
     private void onClockClick(TextView v){
         interfaceDialogSample.onClockClick(v);
@@ -46,7 +56,9 @@ public class DialogKeyboards extends Dialog {
     private static final String TAG = "DialogKeyboards";
 
     public static final int SAMPLE_UI_SATU = 123123;
+    public static final int SAMPLE_UI_DUA = 123124;
     private SampleUISatu sampleUiSatu;
+    private SimpleUIDua simpleUIDua;
 
     public DialogKeyboards(Context context, int layout) {
         super(context);
@@ -54,7 +66,11 @@ public class DialogKeyboards extends Dialog {
         if (layout == SAMPLE_UI_SATU){
             sampleUiSatu = new SampleUISatu(context);
             setContentView(sampleUiSatu);
-            simpleeee();
+            setupSatu();
+        }else if(layout == SAMPLE_UI_DUA){
+            simpleUIDua = new SimpleUIDua(context);
+            setContentView(simpleUIDua);
+            setupDua();
         }else{
             setContentView(layout);
         }
@@ -62,8 +78,7 @@ public class DialogKeyboards extends Dialog {
     }
 
     //component
-
-    private void simpleeee(){
+    private void setupSatu(){
         Button bb = sampleUiSatu.sendBTNS();
         TextView clockSS = sampleUiSatu.clockView();
         bb.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +91,6 @@ public class DialogKeyboards extends Dialog {
                 );
             }
         });
-
         clockSS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,25 +99,32 @@ public class DialogKeyboards extends Dialog {
         });
     }
 
+    private void setupDua(){
+        ImageView aa = simpleUIDua.menuBTNS();
+        ImageView bb = simpleUIDua.sendBTNS();
+        bb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onSendBtn(simpleUIDua.getMtext());
+            }
+        });
+
+        aa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                interfaceDialogSample.onMenu();
+            }
+        });
+    }
+
     public SampleUISatu sampleUISatuLayout(){
         return sampleUiSatu;
     }
 
-    /*@Override
-    public void setOnDismissListener(@Nullable OnDismissListener listener) {
-        super.setOnDismissListener(listener);
-        listener.onDismiss(new DialogInterface() {
-            @Override
-            public void cancel() {
-                Toast.makeText(getContext(), "cencel", Toast.LENGTH_SHORT).show();
-            }
+    public SimpleUIDua simpleUIDuaLayout(){
+        return simpleUIDua;
+    }
 
-            @Override
-            public void dismiss() {
-                Toast.makeText(getContext(), "dismiss", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }*/
 
     public void create(){
 
@@ -142,7 +163,20 @@ public class DialogKeyboards extends Dialog {
 */
 
         show();
+    }
 
+    private DisplayMetrics dpM;
+    public void setDisplay(DisplayMetrics display){
+        dpM = display;
+    }
+
+    public void dismiss(boolean close){
+        /*int width = (int)(dpM.widthPixels);
+        int height = (int)(dpM.heightPixels*0.15);
+        getWindow().setLayout(width, height);*/
+
+        setCancelable(close);
+        setCanceledOnTouchOutside(close);
     }
 
 }

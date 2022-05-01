@@ -45,26 +45,38 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        simDial();
+        dialogKeyboards.setDisplay(getResources().getDisplayMetrics());
+        dialogKeyboards.dismiss(false);
     }
 
 
     private void simDial(){
-        dialogKeyboards = new DialogKeyboards(MainActivity.this, DialogKeyboards.SAMPLE_UI_SATU);
+        dialogKeyboards = new DialogKeyboards(MainActivity.this, DialogKeyboards.SAMPLE_UI_DUA);
         dialogKeyboards.create();
 
         //setup
-        dialogKeyboards.sampleUISatuLayout().setTvMax(45);
-        dialogKeyboards.sampleUISatuLayout().changeClockText("00:00");
+        dialogKeyboards.simpleUIDuaLayout().setTvMax(20);
         dialogKeyboards.onBtnSendClicked(new DialogKeyboards.BtnSendClick() {
             @Override
             public void onSendBtn(String clock, boolean notification, String mText) {
-                Toast.makeText(MainActivity.this, "{"+notification+"}"+mText, Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onSendBtn2(String mText) {
+                Toast.makeText(MainActivity.this, mText, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onMenu() {
+                Toast.makeText(MainActivity.this, "Not Avalible now", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onClockClick(TextView tv) {
-                Toast.makeText(MainActivity.this, "Clcok Clicked!", Toast.LENGTH_SHORT).show();
-                tv.setText("12:43");
+
             }
         });
     }
